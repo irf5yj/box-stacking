@@ -26,7 +26,12 @@ public class Box implements Comparable<Box>{
 		int area = o.depth*o.width;
 		int thisArea = this.depth*this.width;
 		
-		return area - thisArea;
+		if (area-thisArea<0) {
+			return -1;
+		} else if (area-thisArea>0) {
+			return 1;
+		} else {return 0;}
+
 	}
 	
 }
